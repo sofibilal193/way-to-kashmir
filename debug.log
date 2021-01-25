@@ -1,0 +1,2 @@
+[0117/122824.950:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0117/122824.955:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\sofib\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\e15d9fb7-7252-4978-9f35-a0e5a46b4dff: The system cannot find the path specified. (0x3)

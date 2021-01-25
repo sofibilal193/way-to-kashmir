@@ -1,0 +1,144 @@
+.lowerBody {
+	width:100%;
+	border-radius:5px;
+	margin:auto;
+	text-align:center;
+	background-color:ghostwhite;
+}
+.spDiv {
+	background-color:royalblue;
+}
+#specialPackages {
+	width:70%;
+	text-align:center;
+	display:inline-block;
+	user-select:none;
+	font-weight:bold;
+	font-family:candara;
+	color:white;
+	font-size:30px;
+}
+.container .packageWholeDiv {
+	width:100%;
+	text-align:center;
+	margin:auto;
+}
+.container .PackageColumn {
+	max-width:250px;
+	margin:5px;
+	display:inline-block;
+	vertical-align:top;
+}
+.container .PackageColumn .packageBox {
+	background-color:lightcyan;
+	width:100%;
+	border-radius:4px;
+	text-align:center;
+	margin:auto;
+	display:inline-block;
+}
+.imageDiv {
+	position:relative;
+}
+.PlaceTagDiv {
+	position:absolute;
+	top:0;
+	left:0;
+	width:80%;
+	
+}
+.PlaceTagDiv #PlaceName {
+	font-weight:bold;
+	color:white;
+	background-color:black;
+	margin:0px;
+	font-size:25px;
+	border-bottom-right-radius:10px;
+	user-select:none;
+}
+
+.container .packageBox img {
+	width:100%;
+	height:270px;
+	border-radius:2px;
+} 
+.daysAndPrice {
+	position:absolute;
+	bottom:4px;
+	left:0;
+	width:100%;
+}
+#DandN {
+	background-color: darkviolet; /**/
+	font-size:20px;
+	border-radius:1px;
+	color:white;
+	user-select:none;
+	padding:5px;
+	border-top-right-radius:10px;
+	border-bottom-right-radius:10px;
+	margin:0px;
+	float:left;
+	border:0.5px solid white;
+}
+#price {
+	background-color: darkviolet; /**/
+	font-size:20px;
+	border-radius:1px;
+	color:white;
+	user-select:none;
+	padding:5px;
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+	float:right;
+	margin:0px;
+	border:0.5px solid white;
+}
+.container .PackageColumn .packageBox .packageFooter {
+	
+	width:100%;
+	height:40px;
+	vertical-align:bottom;
+}
+
+.container .PackageColumn .packageBox .packageFooter #moreInfo {
+	display:inline-block;
+	background-color:#4CAF50; /*green color*/
+	float:left;
+	font-size:15px;
+	padding:5px;
+	margin:5px; 
+	font-weight:bold;
+	text-decoration:none;
+	border-radius:4px;
+	color:white;
+	user-select:none;
+}
+.container .PackageColumn .packageBox .packageFooter #moreInfo:hover {
+	background-color:#008F11;   /*Shady Green*/
+}
+ .container .PackageColumn .packageBox .packageFooter #moreInfo:active	{
+	background-color:red;
+	border-top:1px solid green;
+}
+
+.container .PackageColumn .packageBox .packageFooter #Book {
+	display:inline-block;
+	background-color:#F62217; /*green color*/
+	float:right;
+	font-size:15px;
+	padding:4px;
+	margin:5px; 
+	font-weight:bold;
+	text-decoration:none;
+	border-radius:4px;
+	color:white;
+	user-select:none;
+}
+.container .PackageColumn .packageBox .packageFooter #Book:hover {
+	background-color:red;   /*Shady Green*/
+}
+ .container .PackageColumn .packageBox .packageFooter #Book:active	{
+	background-color:green;
+	border-top:1px solid red;
+}

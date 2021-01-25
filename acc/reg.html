@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Registration Form</title>
+    <style media="screen">
+      * {
+        font-family:arial;
+      }
+      body {
+        text-align:center;
+        background-image: url(bg.jpeg);
+        background-size: cover;
+        height: 100vh;
+      }
+      .signupDiv {
+        text-align:center;
+        margin:auto;
+        height:auto;
+        width:400px;
+        background-color:#d3dade;
+      }
+      table {
+        margin:auto;
+      }
+      form {
+        text-align:left;
+       
+      }
+      input {
+        margin:5px auto 0px 5px;
+        width:385px;
+        height:30px;
+        border-radius:5px;
+      }
+      label {
+        font-weight:bold;
+        margin-left:7px;
+        width:100px;
+        text-align:left;
+		
+
+      }
+      input[type=button] {
+        background-color:#12aee3;
+        border:none;
+        color:white;
+        font-weight:bold;
+        vertical-align:bottom;
+        margin-bottom:0px;
+        height:40px;
+        cursor:pointer;
+      }
+      #nameMsg, #mobnMsg,#emailMsg, #pwdMsg, #cpwdMsg {
+        color:red;
+        margin-left:8px;
+        font-size:10px;
+		height:20px;
+		display:block;
+		font-weight:bold;
+      }
+	  tr {
+		width:100%;
+		line-height:25px;
+	  }
+	 #showPwd {
+		text-align:right;
+		color:blue;
+		cursor:pointer;
+		user-select:none;
+		margin-left:180px;
+    font-size: 14px;
+	 }
+   td p a {
+    text-decoration:none;
+    font-weight:bold;
+   }
+	 
+    </style>
+  </head>
+  <body>
+
+    <div class="signupDiv">
+      <form class="" action="index.html" method="post">
+        <table>
+          <tr>
+			<td>
+            <h1>Sign-Up <span>&#x270E;</span></h1>
+			</td>
+          </tr>
+          <tr>
+			<td>
+				<label for="namE">Full Name: </label>
+				<input type="name" id="namE" name="Full Name" placeholder="Enter Full Name">
+				<span id="nameMsg"></span>
+			</td>
+          </tr>
+          <tr>
+			<td>
+				<label for="mobN">Mobile Number: </label>
+				<input type="text" id="mobN" name="Mobile Number" placeholder="Enter Mobile Number">
+				<span id="mobnMsg"></span>
+			</td>
+		  </tr>
+          <tr>
+			<td>
+				<label for="emaiL">Email: </label>
+				<input type="email" id="emaiL" name="Email" placeholder="Enter Email">
+				<span id="emailMsg"></span>
+			</td>
+          </tr>
+         
+          <tr>
+			<td>
+				<label for="pwD">Password: </label><span onclick="showHidePwd()" id="showPwd">Show Password</span>
+				<input type="password" id="pwD" id="psw" placeholder="Enter Password" name="Passwod" >
+				<span id="pwdMsg"></span>
+			</td>
+          </tr>
+          
+          <tr>
+			<td>
+				<label for="cpwD">Confrim Password: </label>
+				<input type="password" id="cpwD" name="Confirm Password" placeholder="Confirm Password" >
+				<span id="cpwdMsg"></span>
+			</td>
+          </tr>
+          
+          <tr>
+			<td>
+				<input type="button" onclick="checkForm()" name="Register Button" value="Register">
+			</td>
+          </tr>
+
+          <tr>
+            <td><p>Already Registered, <a href="login.html">Log-in</a></p></td>
+          </tr>
+        </table>
+		<br><br>
+      </form>
+    </div>
+	
+	 <script type=text/javascript>
+      function checkForm() {
+		// Store value of Input field Name
+        var nameInput = document.getElementById("namE").value;
+		
+		// Pattern (Regular Expression) For Valid Name
+        var namePattern =  /^[a-zA-Z ]{2,30}$/; 
+		
+		var mobnInput = document.getElementById("mobN").value; 
+		var mobnPattern =  /^[0-9]{10,10}$/; 
+		
+		// Store value of Input field Email in variable
+        var emailInput = document.getElementById("emaiL").value;
+		
+		// Pattern (Regular Expression) For Valid Email
+         var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/; //Pattern (Regular Expression) For Valid Email
+
+		// Store value of Input field Passwod
+         var pwdInput = document.getElementById("pwD").value;
+		 
+		 // Pattern (Regular Expression) For Valid Passwod
+         var pwdPattern = /.{6,12}/; //Pattern (Regular Expression) For Valid Password
+
+		 // Store value of Input field Confirm Passwod
+         var cpwdInput = document.getElementById("cpwD").value;
+
+			//Check if name Input matches the Pattern of name
+           if (namePattern.test(nameInput)) //Name Validation
+           {
+             document.getElementById('namE').style.removeProperty('border'); //Remove Red Border
+             document.getElementById("nameMsg").innerHTML = ""; // Remove Message
+					if (mobnPattern.test(mobnInput)) //Name Validation
+					{
+					document.getElementById('mobN').style.removeProperty('border'); //Remove Red Border
+					document.getElementById("mobnMsg").innerHTML = ""; // Remove Message
+					
+					//Check if Email Input matches the Pattern of Email
+                 if (emailPattern.test(emailInput)) //Email validation
+					{
+                   document.getElementById('emaiL').style.removeProperty('border') //Remove Red Border
+                   document.getElementById("emailMsg").innerHTML = "" // Remove Message
+
+					//Check if Passwrd Input matches the Pattern of Password
+                   if (pwdPattern.test(pwdInput)) //password
+                   {
+                     document.getElementById('pwD').style.removeProperty('border') //Remove Red Border
+                     document.getElementById("pwdMsg").innerHTML = ""; // Remove Message
+
+						// Check if Confirm Passwod matches previous Entered password
+                     if(cpwdInput === pwdInput)
+                     {
+                       document.getElementById('cpwD').style.removeProperty('border') //Remove Red Border
+                       document.getElementById("cpwdMsg").innerHTML = ""; // Remove Message
+                        return (true);
+                     }
+					 
+					 // If Confirm Passwod Input do not matchse the Previous password
+                     else {
+                       document.getElementById("cpwdMsg").innerHTML = "Password Must Match"; // Show Message
+                       document.getElementById("cpwD").style.border = "1.5px solid red";  // Set Border Red
+                     }
+                   }
+				   
+				   // If Passwod Input do not matches the Pattern of Passwod
+                   else {
+                     document.getElementById("pwdMsg").innerHTML = "Password Must be between 6 & 12 characters"; // Show Message
+                     document.getElementById("pwD").style.border = "1.5px solid red";  // Set Border Red
+                   }
+                 }
+				 // If Email Input do not matches the Pattern of Email
+                 else {
+                   document.getElementById("emailMsg").innerHTML = "Enter Valid Email"; // Show Message
+                   document.getElementById("emaiL").style.border = "1.5px solid red"; // Set Border Red
+                 }
+				 }
+				 else {
+				 document.getElementById("mobnMsg").innerHTML = "Enter Valid Mobile Number!"; // Show Message
+				 document.getElementById("mobN").style.border = "1.5px solid red";  // Set Border Red
+				}
+           }
+		   // If name Input do not matches the Pattern of name
+           else {
+             document.getElementById("nameMsg").innerHTML = "Enter Valid Name!"; // Show Message
+             document.getElementById("namE").style.border = "1.5px solid red";  // Set Border Red
+           }
+      }
+	   function showHidePwd() {
+	   
+		var showPassword = document.getElementById("showPwd");
+		
+		if(showPassword.innerHTML == "Show Password") {
+			showPassword.innerHTML = "Hide Password";
+      showPassword.style.color = "red";
+			document.getElementById("pwD").type = "text";
+			document.getElementById("cpwD").type = "text";
+		}
+		else {
+			showPassword.innerHTML = "Show Password";
+      showPassword.style.color = "blue";
+			document.getElementById("pwD").type = "password";
+			document.getElementById("cpwD").type = "password";
+		}
+	   }
+
+	  
+	  </script>
+  </body>
+</html>
